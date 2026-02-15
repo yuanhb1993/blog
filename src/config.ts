@@ -1,6 +1,6 @@
 export const SITE = {
   website: "https://dreamwhisper.cc//", // replace this with your deployed domain
-  author: "Yuan",
+  author: "呓语者",
   profile: "https://satnaing.dev/",
   desc: "借助AI穿越符号与想象，直抵实在界。探讨社会心理深层问题。",
   title: "夜梦呓语录",
