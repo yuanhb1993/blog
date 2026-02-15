@@ -4,7 +4,7 @@ author: "呓语者"
 pubDatetime: 2026-02-15T16:30:00Z
 slug: "silicon-reality-ai-liberation-paradox"
 featured: false
-draft: true
+draft: false
 tags:
   - "人工智能"
   - "哲学"

@@ -4,7 +4,7 @@ author: "呓语者"
 pubDatetime: 2026-02-15T16:30:00Z
 slug: "confucius-thirty-erect-psychoanalysis-neuroscience"
 featured: false
-draft: true
+draft: false
 tags:
   - "儒家"
   - "哲学"
