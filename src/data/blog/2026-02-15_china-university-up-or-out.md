@@ -1,7 +1,7 @@
 ---
 title: 中国高校非升即走制度对颠覆式创新与人才生态的深度双重影响
 author: 呓语者
-pubDatetime: 2026-02-15T16:30:00Z
+pubDatetime: 2026-02-14T16:30:00Z
 slug: china-university-up-or-out-system-disruptive-innovation
 featured: false
 draft: false

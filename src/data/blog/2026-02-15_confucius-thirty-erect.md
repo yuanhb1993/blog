@@ -1,7 +1,7 @@
 ---
 title: 三十而立：儒学、拉康与认知神经科学的多维考辨
 author: 呓语者
-pubDatetime: 2026-02-15T16:30:00Z
+pubDatetime: 2026-02-14T16:30:00Z
 slug: confucius-thirty-erect-psychoanalysis-neuroscience
 featured: false
 draft: false

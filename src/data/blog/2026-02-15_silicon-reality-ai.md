@@ -1,7 +1,7 @@
 ---
 title: 硅基实在界：人工智能解放悖论的深度辩证
 author: 呓语者
-pubDatetime: 2026-02-15T16:30:00Z
+pubDatetime: 2026-02-14T16:30:00Z
 slug: silicon-reality-ai-liberation-paradox
 featured: false
 draft: false
