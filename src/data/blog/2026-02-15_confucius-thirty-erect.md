@@ -1,16 +1,16 @@
 ---
-title: "三十而立：儒学、拉康与认知神经科学的多维考辨"
-author: "呓语者"
+title: 三十而立：儒学、拉康与认知神经科学的多维考辨
+author: 呓语者
 pubDatetime: 2026-02-15T16:30:00Z
-slug: "confucius-thirty-erect-psychoanalysis-neuroscience"
+slug: confucius-thirty-erect-psychoanalysis-neuroscience
 featured: false
 draft: false
 tags:
-  - "儒家"
-  - "哲学"
-  - "心理学"
-  - "神经科学"
-description: "从古典儒学、拉康精神分析与认知神经科学三个维度，解构孔子“三十而立”的深层含义，揭示成熟主体确立的多维机制。"
+  - 儒家
+  - 哲学
+  - 心理学
+  - 神经科学
+description: 从古典儒学、拉康精神分析与认知神经科学三个维度，解构孔子“三十而立”的深层含义，揭示成熟主体确立的多维机制。
 ---
 
 > 导语：“三十而立”作为孔子对自己生命历程的经典概括，千百年来被视为中国文化语境下个体成熟的标志性节点。但这一概念在现代语境中常被庸俗化为物质财富的积累。本报告将结合儒学、精神分析与神经科学，揭示“立”的真正内涵。

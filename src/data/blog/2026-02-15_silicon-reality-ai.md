@@ -1,15 +1,15 @@
 ---
-title: "硅基实在界：人工智能解放悖论的深度辩证"
-author: "呓语者"
+title: 硅基实在界：人工智能解放悖论的深度辩证
+author: 呓语者
 pubDatetime: 2026-02-15T16:30:00Z
-slug: "silicon-reality-ai-liberation-paradox"
+slug: silicon-reality-ai-liberation-paradox
 featured: false
 draft: false
 tags:
-  - "人工智能"
-  - "哲学"
-  - "拉康"
-description: "从拉康精神分析视角深度剖析AI“解放人类”的承诺为何可能沦为另一种形式的废弃或奴役，探讨人类创造力的不可替代性。"
+  - 人工智能
+  - 哲学
+  - 拉康
+description: 从拉康精神分析视角深度剖析AI“解放人类”的承诺为何可能沦为另一种形式的废弃或奴役，探讨人类创造力的不可替代性。
 ---
 
 > 导语：当AI能替我们写作、替我们思考、替我们做决定时，我们还剩下什么？本文将揭示所谓“AI解放人类”背后的深层悖论。

@@ -1,15 +1,15 @@
 ---
-title: "中国高校非升即走制度对颠覆式创新与人才生态的深度双重影响"
-author: "呓语者"
+title: 中国高校非升即走制度对颠覆式创新与人才生态的深度双重影响
+author: 呓语者
 pubDatetime: 2026-02-15T16:30:00Z
-slug: "china-university-up-or-out-system-disruptive-innovation"
+slug: china-university-up-or-out-system-disruptive-innovation
 featured: false
 draft: false
 tags:
-  - "学术"
-  - "教育政策"
-  - "创新研究"
-description: "深度剖析中国高校非升即走制度如何同时催生科研繁荣与扼杀原始创新，揭示制度性内卷的深层机制与未来改革路径。"
+  - 学术
+  - 教育政策
+  - 创新研究
+description: 深度剖析中国高校非升即走制度如何同时催生科研繁荣与扼杀原始创新，揭示制度性内卷的深层机制与未来改革路径。
 ---
 
 > 导语：在全球科技竞争日益白热化的背景下，中国高等教育正经历一场深刻的范式转移。这场变革的核心目标，是从科研“量”的积累转向“质”的飞跃——从维持性创新迈向颠覆式创新。非升即走制度，正是这场变革中的核心制度安排。它为何同时成为创新引擎与创新杀手？本报告将揭示这一悖论的深层逻辑。
