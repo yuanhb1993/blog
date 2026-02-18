@@ -11,16 +11,12 @@ export default function Comments({
   lightTheme = "light",
   darkTheme = "dark",
 }: CommentsProps) {
-  const [theme, setTheme] = useState<"light" | "dark">(() => {
+  const [theme, setTheme] = useState<string>(() => {
     const currentTheme = localStorage.getItem("theme");
-    const browserTheme = window.matchMedia("(prefers-color-scheme: dark)")
-      .matches
+    if (currentTheme) return currentTheme;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
-
-    return currentTheme === "dark" || currentTheme === "light"
-      ? currentTheme
-      : browserTheme;
   });
 
   useEffect(() => {
@@ -34,19 +30,23 @@ export default function Comments({
   }, []);
 
   useEffect(() => {
-    const themeButton = document.querySelector("#theme-btn");
-    const handleClick = () => {
-      setTheme(prevTheme => (prevTheme === "dark" ? "light" : "dark"));
-    };
+    const root = document.documentElement;
+    const observer = new MutationObserver(() => {
+      const currentTheme = root.getAttribute("data-theme");
+      if (currentTheme) setTheme(currentTheme);
+    });
 
-    themeButton?.addEventListener("click", handleClick);
-    return () => themeButton?.removeEventListener("click", handleClick);
+    observer.observe(root, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div className="mt-8">
       <Giscus
-        theme={theme === "light" ? lightTheme : darkTheme}
+        theme={theme === "dark" ? darkTheme : lightTheme}
         {...getGiscusConfig()}
       />
     </div>

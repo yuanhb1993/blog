@@ -140,12 +140,14 @@ const structuredData = {
     <!-- Minimal inline script to prevent FOUC - sets theme immediately -->
     <script is:inline>
       (function () {
-        const initialColorScheme = ""; // "light" | "dark"
+        const THEMES = ["light", "dark", "sepia"];
+        const initialColorScheme = ""; // "light" | "dark" | "sepia"
         const currentTheme = localStorage.getItem("theme");
+        const isValidTheme = theme => THEMES.includes(theme);
 
         function getPreferTheme() {
-          if (currentTheme) return currentTheme;
-          if (initialColorScheme) return initialColorScheme;
+          if (isValidTheme(currentTheme)) return currentTheme;
+          if (isValidTheme(initialColorScheme)) return initialColorScheme;
           return window.matchMedia("(prefers-color-scheme: dark)").matches
             ? "dark"
             : "light";

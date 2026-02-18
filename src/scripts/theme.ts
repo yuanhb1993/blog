@@ -1,19 +1,24 @@
 // Constants
 const THEME = "theme";
-const LIGHT = "light";
-const DARK = "dark";
+const THEMES = ["light", "dark", "sepia"] as const;
+const LIGHT = THEMES[0];
+const DARK = THEMES[1];
 
 // Initial color scheme
-// Can be "light", "dark", or empty string for system's prefers-color-scheme
+// Can be "light", "dark", "sepia", or empty string for system's prefers-color-scheme
 const initialColorScheme = "";
+
+function isValidTheme(theme: string | null): theme is (typeof THEMES)[number] {
+  return !!theme && THEMES.includes(theme as (typeof THEMES)[number]);
+}
 
 function getPreferTheme(): string {
   // get theme data from local storage (user's explicit choice)
   const currentTheme = localStorage.getItem(THEME);
-  if (currentTheme) return currentTheme;
+  if (isValidTheme(currentTheme)) return currentTheme;
 
   // return initial color scheme if it is set (site default)
-  if (initialColorScheme) return initialColorScheme;
+  if (isValidTheme(initialColorScheme)) return initialColorScheme;
 
   // return user device's prefer color scheme (system fallback)
   return window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -77,7 +82,9 @@ function setThemeFeature(): void {
 
   // now this script can find and listen for clicks on the control
   document.querySelector("#theme-btn")?.addEventListener("click", () => {
-    themeValue = themeValue === LIGHT ? DARK : LIGHT;
+    const currentIndex = THEMES.indexOf(themeValue as (typeof THEMES)[number]);
+    const nextIndex = currentIndex === -1 ? 0 : (currentIndex + 1) % THEMES.length;
+    themeValue = THEMES[nextIndex];
     window.theme?.setTheme(themeValue);
     setPreference();
   });
@@ -108,6 +115,8 @@ document.addEventListener("astro:before-swap", event => {
 window
   .matchMedia("(prefers-color-scheme: dark)")
   .addEventListener("change", ({ matches: isDark }) => {
+    // Respect explicit user-selected theme in localStorage
+    if (isValidTheme(localStorage.getItem(THEME))) return;
     themeValue = isDark ? DARK : LIGHT;
     window.theme?.setTheme(themeValue);
     setPreference();

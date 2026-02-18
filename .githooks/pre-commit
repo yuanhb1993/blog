@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Auto-update modDatetime in staged blog markdown files.
+node scripts/update-mod-datetime.mjs

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "katex/dist/katex.min.css";
 @import "./typography.css";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -18,6 +19,14 @@ html[data-theme="dark"] {
   --accent: #ff6b01;
   --muted: #343f60;
   --border: #ab4b08;
+}
+
+html[data-theme="sepia"] {
+  --background: #f6efe5;
+  --foreground: #3d2f22;
+  --accent: #9a5f00;
+  --muted: #e8dac8;
+  --border: #d8c2a6;
 }
 
 @theme inline {
