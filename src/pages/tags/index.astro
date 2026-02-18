@@ -7,23 +7,17 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import getUniqueTags from "@/utils/getUniqueTags";
 import { SITE } from "@/config";
-import { getLocale, t } from "@/i18n";
-import { filterPostsByLocale } from "@/utils/i18n";
 
-const locale = getLocale(Astro.currentLocale);
-const posts = filterPostsByLocale(await getCollection("blog"), locale);
+const posts = await getCollection("blog");
 
 let tags = getUniqueTags(posts);
 ---
 
-<Layout title={`${t(locale, "tags.title")} | ${SITE.title}`}>
+<Layout title={`Tags | ${SITE.title}`}>
   <Header />
-  <Main
-    pageTitle={t(locale, "tags.title")}
-    pageDesc={t(locale, "tags.description")}
-  >
-    <ul>
-      {tags.map(({ tag, tagName }) => <Tag {tag} {tagName} size="lg" />)}
+  <Main pageTitle="Tags" pageDesc="All the tags used in posts.">
+    <ul class="flex flex-wrap gap-6">
+      {tags.map(({ tag, tagName }) => <Tag {tag} {tagName} />)}
     </ul>
   </Main>
   <Footer />

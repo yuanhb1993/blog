@@ -3,8 +3,6 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import { getPath } from "@/utils/getPath";
 import { generateOgImageForPost } from "@/utils/generateOgImages";
 import { SITE } from "@/config";
-import { defaultLocale } from "@/i18n";
-import { filterPostsByLocale } from "@/utils/i18n";
 
 export async function getStaticPaths() {
   if (!SITE.dynamicOgImage) {
@@ -14,9 +12,8 @@ export async function getStaticPaths() {
   const posts = await getCollection("blog").then(p =>
     p.filter(({ data }) => !data.draft && !data.ogImage)
   );
-  const localePosts = filterPostsByLocale(posts, defaultLocale);
 
-  return localePosts.map(post => ({
+  return posts.map(post => ({
     params: { slug: getPath(post.id, post.filePath, false) },
     props: post,
   }));

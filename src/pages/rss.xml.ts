@@ -3,19 +3,16 @@ import { getCollection } from "astro:content";
 import { getPath } from "@/utils/getPath";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
-import { getLocale, t } from "@/i18n";
-import { filterPostsByLocale, localizePath } from "@/utils/i18n";
 
-export async function GET({ currentLocale }: { currentLocale?: string }) {
-  const locale = getLocale(currentLocale);
-  const posts = filterPostsByLocale(await getCollection("blog"), locale);
+export async function GET() {
+  const posts = await getCollection("blog");
   const sortedPosts = getSortedPosts(posts);
   return rss({
     title: SITE.title,
-    description: t(locale, "site.description"),
+    description: SITE.desc,
     site: SITE.website,
     items: sortedPosts.map(({ data, id, filePath }) => ({
-      link: localizePath(locale, getPath(id, filePath)),
+      link: getPath(id, filePath),
       title: data.title,
       description: data.description,
       pubDate: new Date(data.modDatetime ?? data.pubDatetime),
