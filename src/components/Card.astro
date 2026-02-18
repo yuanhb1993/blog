@@ -1,33 +1,40 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@/utils/slugify";
+import type { CollectionEntry } from "astro:content";
 import { getPath } from "@/utils/getPath";
 import Datetime from "./Datetime.astro";
+import { getLocale } from "@/i18n";
+import { localizePath } from "@/utils/i18n";
 
-type Props = {
+export interface Props extends CollectionEntry<"blog"> {
   variant?: "h2" | "h3";
-} & CollectionEntry<"blog">;
+}
 
-const { variant: Heading = "h2", id, data, filePath } = Astro.props;
+const { variant = "h2", data, id, filePath } = Astro.props;
+const locale = getLocale(Astro.currentLocale);
+const postUrl = localizePath(locale, getPath(id, filePath));
 
-const { title, description, ...props } = data;
+const { title, description, pubDatetime, modDatetime, timezone } = data;
+
+const headerProps = {
+  style: { viewTransitionName: slugifyStr(title) },
+  class: "text-lg font-medium decoration-dashed hover:underline",
+};
 ---
 
 <li class="my-6">
   <a
-    href={getPath(id, filePath)}
-    class:list={[
-      "inline-block text-lg font-medium text-accent",
-      "decoration-dashed underline-offset-4 hover:underline",
-      "focus-visible:no-underline focus-visible:underline-offset-0",
-    ]}
+    href={postUrl}
+    class="inline-block text-lg font-medium text-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
   >
-    <Heading
-      style={{ viewTransitionName: slugifyStr(title.replaceAll(".", "-")) }}
-    >
-      {title}
-    </Heading>
+    {
+      variant === "h2" ? (
+        <h2 {...headerProps}>{title}</h2>
+      ) : (
+        <h3 {...headerProps}>{title}</h3>
+      )
+    }
   </a>
-  <Datetime {...props} />
+  <Datetime {pubDatetime} {modDatetime} {timezone} />
   <p>{description}</p>
 </li>
