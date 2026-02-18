@@ -1,27 +1,26 @@
 import Giscus, { type Theme } from "@giscus/react";
 import { getGiscusConfig } from "@/constants";
-import type { Locale } from "@/i18n";
 import { useEffect, useState } from "react";
 
 interface CommentsProps {
   lightTheme?: Theme;
   darkTheme?: Theme;
-  locale: Locale;
 }
 
 export default function Comments({
   lightTheme = "light",
   darkTheme = "dark",
-  locale,
 }: CommentsProps) {
-  const [theme, setTheme] = useState(() => {
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
     const currentTheme = localStorage.getItem("theme");
     const browserTheme = window.matchMedia("(prefers-color-scheme: dark)")
       .matches
       ? "dark"
       : "light";
 
-    return currentTheme || browserTheme;
+    return currentTheme === "dark" || currentTheme === "light"
+      ? currentTheme
+      : browserTheme;
   });
 
   useEffect(() => {
@@ -31,7 +30,6 @@ export default function Comments({
     };
 
     mediaQuery.addEventListener("change", handleChange);
-
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
@@ -42,7 +40,6 @@ export default function Comments({
     };
 
     themeButton?.addEventListener("click", handleClick);
-
     return () => themeButton?.removeEventListener("click", handleClick);
   }, []);
 
@@ -50,7 +47,7 @@ export default function Comments({
     <div className="mt-8">
       <Giscus
         theme={theme === "light" ? lightTheme : darkTheme}
-        {...getGiscusConfig(locale)}
+        {...getGiscusConfig()}
       />
     </div>
   );

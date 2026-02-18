@@ -12,8 +12,6 @@ import BackToTopButton from "@/components/BackToTopButton.astro";
 import { getPath } from "@/utils/getPath";
 import { slugifyStr } from "@/utils/slugify";
 import Comments from "@/components/Comments";
-import { getLocale, t } from "@/i18n";
-import { localizePath } from "@/utils/i18n";
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
 import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
 import { SITE } from "@/config";
@@ -129,7 +127,7 @@ const nextPost =
 
     <ShareLinks />
 
-    <Comments client:only="react" locale={locale} />
+    <Comments client:only="react" />
     
     <hr class="my-6 border-dashed" />
 
