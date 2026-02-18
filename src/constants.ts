@@ -4,6 +4,7 @@ import IconMail from "@/assets/icons/IconMail.svg";
 import IconGitHub from "@/assets/icons/IconGitHub.svg";
 import IconBrandX from "@/assets/icons/IconBrandX.svg";
 import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
+import IconRss from "@/assets/icons/IconRss.svg";
 import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import { SITE } from "@/config";
@@ -52,6 +53,12 @@ export const SOCIALS: Social[] = [
     href: "mailto:yuanhb1993@gmail.com",
     linkTitle: `Send an email to ${SITE.title}`,
     icon: IconMail,
+  },
+  {
+    name: "RSS",
+    href: "/rss.xml",
+    linkTitle: `${SITE.title} RSS Feed`,
+    icon: IconRss,
   },
 ] as const;
 
