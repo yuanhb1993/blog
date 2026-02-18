@@ -79,7 +79,7 @@ description: 本文基于神经-精神分析-现象学（NPP）元理论框架�
 ### 1. 拒绝过度卷入 (Anti-Enmeshment)
 
 *   <strong>现象</strong>：BD的高情绪渗透性 + ADHD的冲动 = 容易被他人情绪吞噬，成为<strong>“情绪海绵”</strong>。
-*   <strong>策略</strong>：建立<strong>“心理防火墙”</strong>。当别人倾诉负面情绪时，在大脑中调用<strong>“观察者模式”**（Meta-cognition）。你可以看见，可以听见，但不要让镜像神经元进行模拟。告诉自己：“这是他的课题，不是我的。”
+*   <strong>策略</strong>：建立<strong>“心理防火墙”</strong>。当别人倾诉负面情绪时，在大脑中调用<strong>“观察者模式”（Meta-cognition）</strong>。你可以看见，可以听见，但不要让镜像神经元进行模拟。告诉自己：“这是他的课题，不是我的。”
 
 ### 2. 警惕“拯救者情结”
 
